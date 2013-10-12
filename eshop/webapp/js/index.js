@@ -13,6 +13,24 @@ function initPage()
 		validateStock();
 		popupLayer();
 	};
+
+	//aboutUs.html
+	if(jQuery('.about')[0]){
+		setInterval(function (){
+			var img = jQuery('.about img');
+			var borderLine = 1000-parseInt(img.css('width'))
+			if( parseInt(img.css('left'))== 0){
+				img.animate({
+					left: borderLine,
+				},'slow');
+			}else if(parseInt(img.css('left')) == borderLine){
+				console.log(borderLine);
+				img.animate({
+					left: 0,
+				},'slow');
+			};
+		},1000);
+	};
 };
 
 function bannerRoll()
@@ -155,7 +173,6 @@ function observerScroll(){
 		mask.fadeOut('fast');
 		popupLayer.fadeOut('fast');
 		oSide = oSide[0];
-		console.log(oSide);
 		if(nScroll > 160){
 			startMove(oSide, {top: nScroll});
 		}else{
@@ -167,26 +184,33 @@ function observerScroll(){
 function popupLayer(){
 	var mask = jQuery('#mask');
 	var popupLayer = jQuery('#details');
+	var IdH1 = jQuery('#details h1')[0];
 	var IdImg = jQuery('#details img')[0];
 	var aDetalis = jQuery('.details');
+	var aH1 = jQuery('.details h1');
 	var aImg = jQuery('.details img');
 	var sWidth = jQuery(window).width();
 	var sHeight = jQuery(window).height();
 
 	for(var i=1;i<aDetalis.length;i++){
+		aImg[i].index = i;
 		aImg[i] = jQuery(aImg[i]);
 		aImg[i].bind('click', function (){
 			var ScrollTop = jQuery(document).scrollTop();
+			//弹出层值传递
 			IdImg.src =  this.src;
+			IdH1.innerHTML = aH1[this.index].innerHTML;
+			mask.text('');
 			mask.css({
 				'width': sWidth,
 				'height': sHeight,
 				'top': ScrollTop
 			});
+
 			popupLayer.css({
 				'top': ScrollTop+100,
 				'left': sWidth/2-186
-			})
+			});
 			mask.fadeIn('slow');
 			popupLayer.fadeIn('slow');
 		});

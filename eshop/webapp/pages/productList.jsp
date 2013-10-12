@@ -36,6 +36,19 @@
 			var aInput = oForm.getElementsByTagName('input');
 			var id = aInput[0].value;
 			var num = aInput[1].value;
+			//mask style
+			var sWidth = jQuery(window).width();
+			var sHeight = jQuery(window).height();
+			var mask = jQuery('#mask');
+				jQuery(this).ajaxStart(function (){
+					var ScrollTop = jQuery(document).scrollTop();
+					mask.css({
+						'width': sWidth,
+						'height': sHeight,
+						'top': ScrollTop
+					});
+					mask.fadeIn('slow');
+				});
 				jQuery.ajax({
 					url : '<%=basePath %>shopping/saveOrderItem.action',
 					type : 'post',
@@ -47,8 +60,13 @@
 						if(data.buyNum == 0){
 							alert("亲！物流暂时不给力，欢迎以后来选购！")
 						}else
-							alert("成功加入购物车");
+							console.log("成功加入购物车!");
 					}
+				});
+				jQuery(this).ajaxStop(function (){
+					console.log('请求结束!');
+					mask.fadeOut('slow');
+					mask.text('正在添加商品……请稍后');
 				});
 			});
 		});
@@ -68,7 +86,7 @@
 					if (reply.getResult()) 
 					{
 						alert(reply.getResult());
-					}
+					};
 
 				});
 	};
@@ -157,7 +175,7 @@
 	<div id="details" class="details">
 		<form action="">
 			<input type="hidden" value="dsfasdfasdfsdaf"/>
-			<!-- <h1></h1> -->
+			<h1></h1>
 			<img src="../images/t4.jpg" alt="" />
 			<div class="info">
 				<!-- ￥ <strong>10.10</strong> -->
