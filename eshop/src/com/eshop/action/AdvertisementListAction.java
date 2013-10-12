@@ -4,7 +4,6 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Component;
 
-import com.base.framwork.action.EntityCrudAction;
 import com.base.framwork.action.EntityListAction;
 import com.eshop.filter.AdvertisementFilter;
 import com.eshop.model.AdvertisementModel;

@@ -1,6 +1,7 @@
-/**
- * 操作购物车列表
- */
+// 2013.10.11
+
+
+/* 操作购物车列表 */
 
 function addProduct(id) {
 	jQuery.ajax({

@@ -1,11 +1,12 @@
 package com.eshop.service;
 
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.eshop.domain.UserBuyer;
 import com.eshop.view.ProductViewModel;
 
 public class TestProductViewService {
@@ -20,12 +21,9 @@ public class TestProductViewService {
 	
 	@Test
 	public void testInsert(){
-		UserBuyer user = new UserBuyer();
-		user.setRealname("jack");
-		for(int i=1; i<10; i++){
-			ProductViewModel p = new ProductViewModel();
-			p.setName("pppp"+i);
-			productViewService.insertEntity(p, user);
+		List<ProductViewModel> lists = productViewService.findEntityList();
+		for(ProductViewModel pv : lists){
+			System.out.println(pv.getCounter());
 		}
 	}
 	

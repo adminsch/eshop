@@ -54,8 +54,8 @@
 #panelPage li:hover a{text-decoration: underline;}
 
 /*aboutUs.html*/
-.about{width:1000px;margin:0 auto;text-align: center;}
-.about img{height:400px;margin-top:10px;}
+.about{width:1000px;margin:0 auto;position: relative;overflow: hidden;}
+.about img{height:400px;margin-top:10px;position: relative;left:0;top:0;}
 .about p{font-size:26px;color:#333;font-family: "华文行楷"}
 
 /*activity.html*/
