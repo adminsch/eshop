@@ -27,7 +27,7 @@
 #sideBar div div a{display: block;padding-left: 15px;}
 #sideBar div div a:hover{text-decoration: underline;background: #FFA335}
 /*弹出层样式*/
-#mask{display:none;position:absolute;left:0px;top:0px;height:600px;padding-top:20px;background:#fff;z-index:9;opacity: 0.8;
+#mask{display:none;position:absolute;left:0px;top:0px;height:600px;padding-top:20px;background:#fff;z-index:9;opacity: 0.9;
 	text-align: center;color:#333;font-size:30px;text-decoration: underline;}
 #details{display:none;position:absolute;left:400px;z-index:99;width:372px;height:400px;margin:0 auto;
 	border-bottom:none;}
