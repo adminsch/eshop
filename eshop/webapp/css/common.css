@@ -4,8 +4,8 @@ a{text-decoration: none;color:#000;}ul{margin:0;padding:0#list-style-type: none;
 
 #header{background: #ededed;height:30px;}
 #header div{margin:0 auto;width:1000px;height: 30px;line-height: 30px;}
-#header div h1{display:inline-block;font-family: "Microsoft YaHei";}
-#header div h5{float:right;font-size: 17px;font-family: "Microsoft YaHei";cursor: pointer;}
+#header div h1{display:inline-block;font-family: "Tahoma";}
+#header div h5{float:right;font-size: 17px;font-family: "Tahoma";cursor: pointer;}
 #header div h5:hover a{color:#ffa335;}
 
 #footer{height:300px;background: ##EDEDED;}
@@ -22,12 +22,12 @@ a{text-decoration: none;color:#000;}ul{margin:0;padding:0#list-style-type: none;
 #nav li:hover a{color:#ffa335;}
 
 #nav li a{display:inline-block;font-size: 17px;padding-top:84px;padding-bottom:10px;
-	color:#fff;font-family: "Microsoft YaHei";}
+	color:#fff;font-family: "Tahoma";}
 #nav input,#nav span{position: relative;top:80px;}
 #nav input{color:#aaa;}
-#nav span{display:inline-block;color:#fff;font-size: 17px;color:#fff;font-family: "Microsoft YaHei";}
+#nav span{display:inline-block;color:#fff;font-size: 17px;color:#fff;font-family: "Tahoma";}
 #nav span:hover{color:#000;cursor: pointer;}
-#nav span input{position: relative;top:0;color:#fff;font-size:18px;font-family: "Microsoft YaHei";border:none;
+#nav span input{position: relative;top:0;color:#fff;font-size:18px;font-family: "Tahoma";border:none;
 	background: #ffa335;cursor: pointer;}
 #nav span input:hover{color:#333;}
 

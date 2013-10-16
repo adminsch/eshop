@@ -5,9 +5,10 @@ var List = {
 	4: ['明信片','书签','挂件/饰品','包包包包',''],
 };
 
-
 function initPage()
 {
+	//10.15 站点logo跳转链接
+	hrefLogo();
 	// 2013.10.10 百度统计图表Bug
 	refuseBaiDu();
 
@@ -48,6 +49,15 @@ function initPage()
 			}
 		});
 	};
+};
+
+function hrefLogo(){
+	var hrefLogo = jQuery('#nav div h1');
+	if(hrefLogo){
+		hrefLogo.click(function() {
+			window.location.href = '/workSpace/eShopping/index.html';
+		});
+	}
 };
 
 //屏蔽百度图标

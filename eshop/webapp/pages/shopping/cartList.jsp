@@ -18,7 +18,7 @@
 		
 	<script type="text/javascript" src="<%=basePath %>js/index.js"></script>
 	<script type="text/javascript" src="<%=basePath %>js/shopping.js"></script>
-	<script type="text/javascript" src="<%=basePath %>js/shopping/cartList.js"></script>
+<%-- 	<script type="text/javascript" src="<%=basePath %>js/shopping/cartList.js"></script> --%>
 	<s:text name="com.eshop.head.meta" />
 	<s:text name="com.eshop.head.javascript" />
 </head>
@@ -115,16 +115,18 @@
 				<s:iterator value="#session.cartList.items" status="i" >
 				<li>
 						<div class="name">
+							<input type="hidden" name="productId" value="<s:property value='productId' />">
 							<img src="<s:property value='imageurl' />" alt="" />
 							<strong><s:property value='productName' /></strong>
 						</div>
 						<div class="price">
 							￥<s:property value='price' />
 						</div>
+							
 						<div class="count">
-							<a href="javascript:void(0);"  onclick="decProduct('<s:property value='productId' />')" >-</a>
-							<input type="text" size="1" value="<s:property value='count' />" name="<s:property value='productId' />"  onblur="setProduct('<s:property value='productId' />')"/>
-							<a href="javascript:void(0);"  onclick="addProduct('<s:property value='productId' />')" >+</a>
+							<a href="javascript:void(0);"   >-</a>
+							<input type="text" size="1" value="<s:property value='count' />" name="<s:property value='productId' />"  />
+							<a href="javascript:void(0);"  >+</a>
 						</div>
 						<div class="discount">
 							￥0

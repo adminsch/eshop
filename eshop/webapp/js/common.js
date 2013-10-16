@@ -1,5 +1,27 @@
 jQuery.noConflict();
 
+/*
+	2013.10.14 CreateHTML()
+	type: 创建的html标签元素
+	attr: 需要的html标签属性
+	text: 标签的内容
+	Todd Mark
+*/
+function CreateHTML(type){
+	var oHTML = {
+		type: document.createElement(type),
+		attr: function (json){
+			for(var css in json){
+				this.type.setAttribute(css, json[css]);
+			};
+		},
+		text: function (text){
+			this.type.innerHTML = text;
+		}
+	};
+	return oHTML;
+};
+
 function getStyle(obj, attr)
 {
 	if(obj.currentStyle){

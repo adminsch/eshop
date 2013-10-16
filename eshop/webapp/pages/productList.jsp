@@ -29,7 +29,8 @@
 			var oForm = form[0];
 			var aInput = oForm.getElementsByTagName('input');
 			var id = aInput[0].value;
-			var num = aInput[1].value;
+			var num = aInput[2].value;
+			console.log(id+" num: "+num);
 			//mask style
 			var sWidth = jQuery(window).width();
 			var sHeight = jQuery(window).height();
@@ -48,12 +49,14 @@
 					type : 'post',
 					dataType : 'json',
 					data : {id: id, buyNum:num},
-					timeout:2000,
+					async: false,
+					timeout:1000,
 					success : 
 						function (data) {
 						if(data.buyNum == 0){
-							alert("亲！物流暂时不给力，欢迎以后来选购！")
+							alert("亲！物流暂时不给力，欢迎以后来选购！");
 						}else
+							alert("成功加入购物车！");
 							console.log("成功加入购物车!");
 					}
 				});
@@ -168,9 +171,9 @@
 	</div>
 	<div id="details" class="details">
 		<form action="">
-			<input type="hidden" value="dsfasdfasdfsdaf"/>
+			<input type="hidden" value=""/>
 			<h1></h1>
-			<img src="../images/t4.jpg" alt="" />
+			<img src="" alt="" />
 			<div class="info">
 				<!-- ￥ <strong>10.10</strong> -->
 				<h5 id="up">+</h5>
@@ -190,6 +193,7 @@
 		<div class="details">
 			<form action="<%=basePath %>shopping/saveOrderItem.action" id="productForm" method="post">
 			<input type="hidden" name="id" value="<s:property value='id' />">
+			<input type="hidden" name="desc" value="<s:property value='description' />" >
 			<h1><s:property value='name' /></h1>
 			<img src="<s:property value='imageBig' />" alt="" />
 			<div class="info">

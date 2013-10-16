@@ -14,7 +14,7 @@ function initPage()
 		popupLayer();
 	};
 
-	//aboutUs.html
+	//aboutUs.html 草泥猫摆动函数
 	if(jQuery('.about')[0]){
 		setInterval(function (){
 			var img = jQuery('.about img');
@@ -175,6 +175,7 @@ function observerScroll(){
 		oSide = oSide[0];
 		if(nScroll > 160){
 			startMove(oSide, {top: nScroll});
+			// jQuery(oSide).stop().animate({'top': nScroll}, 'slow')
 		}else{
 			startMove(oSide, {top: 160});
 		};
